@@ -1,0 +1,3 @@
+[submodule "bashcrawl"]
+	path = docs/02-programs/bashcrawl
+	url = https://gitlab.com/slackermedia/bashcrawl.git
