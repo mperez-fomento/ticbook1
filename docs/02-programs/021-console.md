@@ -352,6 +352,7 @@ wget whatever
 # Ejercicios
 
 1.  Crea los archivos y carpetas que aparecen en el siguiente árbol:
+![](../../static/img/ejercicio001.drawio.png)
 
 2.  Ejecuta los siguientes comandos, y dibuja el árbol resultante en la
     carpeta personal:
