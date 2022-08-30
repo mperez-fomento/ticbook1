@@ -1,0 +1,105 @@
+# Qué es un compilador
+
+Recordemos que manejamos dos lenguajes:
+
+-   **Lenguaje máquina**: lenguaje en que están escritas las instrucciones que el ordenador debe ejecutar; se usa código binario (es decir, las instrucciones son secuencias de 0&rsquo;s y 1&rsquo;s). Un programa es una secuencia de instrucciones escritas en código máquina.
+-   **Lenguaje de alto nivel**: lenguaje en que escribimos los programas. Aunque la CPU no es capaz de ejecutar directamente un programa escrito en un lenguaje de alto nivel, es posible traducir (*compilar*) dicho programa a código máquina. Para esa traducción se usa un programa llamado *compilador*. El lenguaje de alto nivel es un lenguaje más parecido al lenguaje natural, aunque con muchos más símbolos, y reglas sintácticas muy estrictas. Tiene cierta semejanza con el lenguaje matemático.
+
+El compilador es el programa que traduce el código fuente a código máquina.
+
+Manejaremos también dos tipos de archivos:
+
+-   **Archivos fuente**: contienen el programa escrito en un lenguaje de alto nivel. Son archivos de texto. Para crearlos y editarlos podríamos usar cualquier editor de texto (cualquier programa que permita escribir textos), pero normalmente usaremos editores especializados (*editores de código*).
+-   **Archivos ejecutables**: contienen el programa traducido a código máquina. Pueden ejecutarse directamente.
+
+El compilador genera un archivo ejecutable a partir de uno o varios archivos fuente.
+
+
+# El compilador GCC
+
+El compilador que usaremos se llama *GCC*. La forma de ejecutarlo en la consola es la siguiente:
+
+```bash
+g++ archivo_fuente -o archivo_ejecutable [opciones]
+```
+
+Es decir, después de escribir `g++`, debemos indicar el nombre del archivo fuente, y luego, `-o` (de /output), y, a continuación, el nombre que queremos que tenga el archivo ejecutable.
+
+Además, podemos incluir algunas opciones para que la compilación se realice a nuestro gusto. De momento, no estudiaremos ninguna de estas opciones. Las iremos viendo conforme vayan siendo necesarias.
+
+El compilador traducirá el código fuente, y guardará el código máquina resultante en el archivo con el nombre especificado.
+
+
+# Errores de compilación
+
+Si durante la traducción el compilador detecta errores en el código fuente, no se generará el archivo ejecutable, y se mostrarán en la consola los errores detectados, indicando el número de línea donde se encontró cada error.
+
+Cuando el compilador detecta un error en el código fuente, mostrará dicho error con bastante información relativa al mismo. En concreto, para cada error encontrado se indica:
+
+-   El nombre del archivo fuente en que se ha encontrado el error.
+-   El número de línea y columna en que se ha encontrado el error.
+-   La palabra *error*.
+-   Una descripción del error.
+-   El fragmento de código fuente en que está el error, con una marca en el lugar concreto del error.
+
+Puede parecer que cada error está indicado dos veces. Pero, en realidad, la primera vez es solo para localizar en qué función estaba el error. Como todavía no sabemos lo que son las funciones, podemos ignorar esa información por el momento.
+
+A veces, con la línea y la descripción del error es suficiente para localizarlo y corregirlo. Sin embargo, ocurre muchas veces que para entender las descripciones de los errores es necesario tener ya muchos conocimientos de C++. Además, sucede también que el compilador no siempre es capaz de identificar el verdadero origen del error.
+
+Además, cuando el compilador encuentra un error, sigue intentando compilar el resto del programa, pero muchas veces ya no es capaz de hacerlo correctamente, por lo que es posible que detecte más errores de los que realmente hay. Es decir, que siempre hay que corregir en primer lugar el primer error detectado por el compilador.
+
+
+# Ejercicios
+
+1.  Escribe, compila y ejecuta el siguiente programa:
+    
+    ```c++
+    #include <iostream>
+    
+    int main()
+    {
+        std::cout << "Hello, World!\n";
+    }
+    ```
+2.  Escribe, compila y ejecuta el siguiente programa:
+    
+    ```c++
+    #include <iostream>
+    #include <string>
+    
+    int main()
+    {
+        std::cout << "What is your name? ";
+        std::string name;
+        std::cin >> name;
+        std::cout << "Hello, " << name << "!\n";
+    }
+    ```
+3.  Escribe el siguiente programa. Guárdalo en un archivo llamado *ejercicio003.cpp*. Compila el programa, de modo que el archivo ejecutable se llame *ejercicio003*.
+    
+    ```c++
+    #include <iostream>
+    
+    int main()
+    {
+    
+    }
+    ```
+4.  Escribe el siguiente programa. Guárdalo en un archivo llamado *ejercicio004.cpp*. Compila el programa, de modo que el archivo ejecutable se llame *ejercicio004*.
+5.  Escribe, compila y ejecuta el siguiente programa: ¿Cuál es el tamaño del archivo fuente? ¿Cuál es el tamaño del archivo ejecutable?
+6.  ¿Qué ocurre si, al ejecutar el compilador para compilar un programa no especificas el nombre que quieres dar al archivo ejecutable resultante?
+7.  ¿Qué ocurre al compilar si ya hay un archivo con el nombre especificado para el archivo ejecutable?
+8.  El siguiente programa contiene errores. Intenta compilarlo para ver los errores. Luego corrige los errores y vuelve a intentar compilarlo, hasta que la compilación se realice sin errores. Finalmente, ejecuta el programa para ver el resultado.
+    
+    ```c++
+    #include <iostream>
+    
+    using namespace std;
+    
+    int main()
+    {
+        cout << "Hello, world!\n"
+    }
+    ```
+9.  El siguiente programa contiene errores. Intenta compilarlo para ver los errores. Luego corrige los errores y vuelve a intentar compilarlo, hasta que la compilación se realice sin errores. Finalmente, ejecuta el programa para ver el resultado.
+10. El siguiente programa contiene errores. Intenta compilarlo para ver los errores. Luego corrige los errores y vuelve a intentar compilarlo, hasta que la compilación se realice sin errores. Finalmente, ejecuta el programa para ver el resultado.
