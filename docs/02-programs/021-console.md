@@ -354,26 +354,26 @@ wget whatever
 1.  Crea los archivos y carpetas que aparecen en el siguiente árbol:
 ![](../../static/img/ejercicio001.drawio.png)
 
-2.  Ejecuta los siguientes comandos, y dibuja el árbol resultante en la
-    carpeta personal:
+2.  Observa el siguiente diagrama, y ordena los comandos siguientes, de modo que el resultado de su ejecución sea el representado por el diagrama:
+![](../../static/img/ejercicio002.drawio.png)
     
     ``` bash
-    cd
-    mkdir ejercicio02
-    cd ejercicio02
-    mkdir folder1
-    mkdir folder2
-    cd folder1
+    touch file3
     mkdir folder3
+    cd
+    mkdir folder4
+    cd ejercicio02
+    mkdir ejercicio02
     cd folder3
-    touch file1
+    cd folder2
+    mkdir folder2
+    mkdir folder1
+    touch file4
     cd ..
+    touch file1
+    cd folder1
     touch file2
     cd ..
-    touch file3
-    cd folder2
-    touch file4
-    mkdir folder4
     cd
     ```
 
