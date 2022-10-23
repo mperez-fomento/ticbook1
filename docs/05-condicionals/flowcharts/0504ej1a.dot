@@ -1,0 +1,21 @@
+digraph G {
+    Start [shape=circle]
+    A [label="x > 0",shape=diamond]
+    B [label="cout << \"positivo\";", shape=box]
+    C [label="x < 0",shape=diamond]
+    D [label="cout << \"negativo\";", shape=box]
+    E [label="x == 0", shape=diamond]
+    F [label="cout << \"nulo\";", shape=box]
+    End [shape=circle]
+
+    Start -> A
+    A -> B [label="Sí"]
+    B -> End
+    A -> C [label="No"]
+    C -> D [label="Sí"]
+    D -> End
+    C -> E [label="No"]
+    E -> End [label="No"]
+    E -> F [label="Sí"]
+    F -> End
+    }

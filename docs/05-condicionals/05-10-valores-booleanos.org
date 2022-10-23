@@ -1,0 +1,24 @@
+#+title: 05 10 Valores Booleanos
+
+** Tipo ~bool~
+
+Los valores booleanos, ~true~ y ~false~, forman un tipo de datos, que se llama ~bool~.
+
+Podemos crear variables de ese tipo, y almacenar en ellas valores booleanos, directamente (usando los literales que representan esos valores: ~true~, ~false~), o indirectamente, almacenando el resultado de una expresión booleana.
+
+** Ejemplos
+
+#+begin_src C++
+bool a {true};
+bool b {false};
+bool c {5 < 1};
+bool d {b || c}; // false
+#+end_src
+
+#+begin_src C++
+bool vivo {true};
+if (vivo)
+{
+    cout << "Estoy vivo\n";
+}
+#+end_src

@@ -1,0 +1,136 @@
+#+title: Ejercicios
+1. Repaso consola.
+
+2. Repaso escribir en la consola.
+
+3. Escribe en C++ las sentencias siguientes:
+   1. Crea una variable de tipo ~int~ llamada ~x~ con valor ~9~.
+   2. Crea una variable de tipo ~double~ llamada ~e~ con valor ~2.718~.
+   3. Crea una variable de tipo ~char~ llamada ~z~ con valor ~'z'~.
+   4. Crea una variable de tipo ~string~ llamada ~saludo~ con valor ~"hola"s~.
+
+4. Corrige los errores:
+   #+begin_src C++ :tangle code/ejercicio2.cpp
+#include "ticlib.h"
+
+using namespace std;
+
+int main()
+{
+    n {2};
+    double pi {3,14};
+    char a {"a"};
+    string s ["hola"s];
+    cout << n << pi << a << s << "\n";
+}
+   #+end_src
+
+5. Escribe en C++ las sentencias siguientes:
+   - Cambia el valor de ~x~ a ~1~.
+   - Cambia el valor de ~letra~ a ~'H'~.
+   - Crea una variable de tipo ~int~ llamada ~uno~ con valor ~1~.
+   - Cambia el valor de ~uno~ a ~2~.
+
+6. Corrige los errores:
+   #+begin_src C++ :tangle code/ejercicio4.cpp
+#include "ticlib.h"
+
+using namespace std;
+
+int main()
+{
+    string saludo {"hola"s}
+    cout << saludo << "\n";
+    saludo = 'hello';
+    cout << saludo << "\n";
+    saludo = {"buenas tardes"s};
+    cout << saludo << "\n";
+}
+   #+end_src
+
+7. Escribe en C++ las sentencias siguientes:
+   - Crea una variable de tipo ~string~ llamada ~best_climber~ con valor ~"Honnold"s~.
+   - Escribe en la consola el valor almacenado en ~best_climber~.
+   - Almacena en ~best_climber~ la palabra escrita por el usuario en el teclado.
+   - Cambia el valor almacenado en ~best_climber~ a ~"Ginés"s~.
+
+8. Indica de qué tipo es cada sentencia:
+   ~cout << "Hola\n";~
+   ~x = 256;~
+   ~char letra {'a'};~
+   ~cin >> letra;~
+
+9. Corrige los errores:
+   #+begin_src C++ :tangle code/ejercicio9.cpp
+#include "ticlib.h"
+
+int main()
+{
+    double pi {3,14};
+    cout << 'Radio esfera? ';
+    cin >> radio;
+    cout << "Volumen = " << 4 * pi * pow(radio, 3) / 3 << "\n"
+}
+   #+end_src
+
+10. Escribe en C++ las sentencias que se indican en los comentarios (una por cada comentario):
+    #+begin_src C++ :tangle code/ejercicio10.cpp
+ #include "ticlib.h"
+
+ using namespace std;
+
+ int main()
+ {
+     // Envía a la consola el mensaje: "Calculadora de triángulos\n"
+     // Envía a la consola el mensaje: "Escribe la base: "
+     // Crea una variable de tipo double llamada base con valor inicial 0.0
+     // Lee de la consola un número decimal y guárdalo en la variable base
+     // Envía a la consola el mensaje: "Escribe la altura: "
+     // Crea una variable de tipo double llamada altura con valor inicial 0.0
+     // Lee de la consola un número decimal y guárdalo en la variable altura
+     // Envía a la consola el mensaje "El área del triángulo es: "
+     // Envía a la consola el resultado de la operación base * altura / 2
+ }
+    #+end_src
+
+11. Escribe un programa que calcule las soluciones de una ecuación de segundo grado. El programa debe pedir al usuario los coeficientes de la ecuación (~a~, ~b~ y ~c~), y mostrar las dos soluciones de la ecuación, empezando por la correspondiente al signo ~-~ ($\dfrac{-b-\sqrt{b^{2}-4ac}}{2a}$), separadas por un espacio. Por ejemplo, si el usuario escribe:
+    #+begin_src bash
+ 1 -5 6
+    #+end_src
+    La salida del programa será:
+    #+begin_src bash
+ 2 3
+    #+end_src
+
+12. Corrige los errores, de modo que se obtenga un resultado como el siguiente:
+
+    #+begin_src bash
+Pepe dice hola
+12
+Escriba un número:
+9
+El doble es: 18
+PI = 3.14
+    #+end_src
+
+    #+begin_src C++
+// Corrige los errores
+
+#include "ticlib.h"
+
+int main() {
+  string alguien {'Pepe'};
+  cout << alguien << dice hola\n
+
+  int y {"5"};
+  x = 7;
+  cout << x + y << "\n"
+  cout << "Escriba un número: ";
+  cin << x;
+  cout << "El doble es: " 2*x << "\n";
+
+  const pi = 3.14;
+  pi = 3.1416;
+  cout << "PI = " << pi << "\n";
+}
+    #+end_src

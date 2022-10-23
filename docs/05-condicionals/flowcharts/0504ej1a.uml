@@ -1,0 +1,12 @@
+@startuml
+
+start
+if (works?) then (yes)
+  :congrats;
+else (no)
+  :fail;
+endif
+
+stop
+
+@enduml

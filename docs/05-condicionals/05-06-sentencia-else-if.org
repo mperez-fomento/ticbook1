@@ -1,0 +1,236 @@
+#+title: 05 06 Sentencia Else If
+
+** Varias condiciones
+
+Si queremos comprobar varias condiciones, podemos usar la construcción ~if/else if/else~. Se comprueba una condición. Si se cumple, se ejecuta el bloque de sentencias correspondiente. Si no se cumple, se comprueba otra condición: la que sigue a ~else if~. Si esta segunda se cumple, se ejecuta el siguiente bloque de sentencias. Se pueden repetir más sentencias ~else if~. Si al final, hay una sentencia ~else~, en caso de que no se haya cumplido ninguna de las condiciones, se ejecutará el bloque de sentencias que sigue a ~else~.
+
+** Sintaxis
+
+#+begin_src C++
+if (condición1)
+{
+    sentencias_si_se_cumple_cond_1;
+}
+else if (condición2)
+{
+    sentencias_si_no_se_cumple_cond_1_pero_se_cumple_cond_2;
+}
+else if (condición3)
+{
+    sentencias_si_no_se_cumplen_cond_1_ni_cond_2_pero_se_cumple_cond_3;
+}
+else
+{
+    sentencias_si_no_se_cumple_ninguna;
+}
+#+end_src
+
+** Ejemplo
+
+#+begin_src C++ :tangle code/else-if-ejemplo.cpp
+#include "ticlib.h"
+
+using namespace std;
+
+int main()
+{
+    cout << "Escriba su nota: ";
+    int nota;
+    cin >> nota;
+    if (nota < 5)
+    {
+        cout << "Suspenso";
+    }
+    else if (nota < 6)
+    {
+        cout << "Suficiente";
+    }
+    else if (nota < 7)
+    {
+        cout << "Bien";
+    }
+    else if (nota < 9)
+    {
+        cout << "Notable";
+    }
+    else {
+        cout << "Sobresaliente";
+    }
+    cout << "\n";
+}
+#+end_src
+
+[[../../static/img/if-else-if-sentence-example.drawio.png]]
+
+Observa la diferencia entre usar o no ~else if~:
+
+#+begin_src C++ :tangle code/else-if-ejemplo-2.cpp
+#include "ticlib.h"
+
+using namespace std;
+
+int main()
+{
+    cout << "Nota? ";
+    int nota;
+    cin >> nota;
+    if (nota < 5)
+    {
+        cout << "Bajo\n";
+    }
+    else if (nota < 7)
+    {
+        cout << "Medio\n";
+    }
+    else
+    {
+        cout << "Alto\n";
+    }
+}
+#+end_src
+
+#+begin_src C++ :tangle code/else-if-ejemplo-3.cpp
+#include "ticlib.h"
+
+using namespace std;
+
+int main()
+{
+    cout << "Nota? ";
+    int nota;
+    cin >> nota;
+    if (nota < 5)
+    {
+        cout << "Bajo\n";
+    }
+    if (nota < 7)
+    {
+        cout << "Medio\n";
+    }
+    if (nota <= 10)
+    {
+        cout << "Alto\n";
+    }
+}
+#+end_src
+
+** Ejercicios
+
+1. Elige el diagrama de flujo correspondiente al siguiente código:
+   #+begin_src C++
+if (x > 0)
+{
+    cout << "positivo";
+}
+else if (x < 0)
+{
+    cout << "negativo";
+}
+else {
+    cout << "nulo";
+}
+   #+end_src
+
+   Opción a:
+   #+begin_src dot :file ../../static/img/05-06-sentencia-else-if-ej2a.png
+digraph G {
+Start [shape=circle]
+if [label="x > 0",shape=diamond]
+s1 [label="cout << \"positivo\";",shape=box]
+elseif [label="x < 0",shape=diamond]
+s2 [label="cout << \"negativo\";",shape=box]
+s3 [label="cout << \"nulo\";",shape=box]
+End [shape=circle]
+
+Start -> if
+if -> s1 [label="Sí"]
+if -> elseif [label="No"]
+s1 -> End
+elseif -> s2 [label="Sí"]
+elseif -> s3 [label="No"]
+s2 -> End
+s3 -> End
+}
+   #+end_src
+
+   #+RESULTS:
+   [[file:05-06-sentencia-else-if-ej2a.png]]
+
+   Opción b:
+   #+begin_src dot :file ../../static/img/05-06-sentencia-else-if-ej2b.png
+digraph G {
+Start [shape=circle]
+if [label="x > 0",shape=diamond]
+s1 [label="cout << \"positivo\";",shape=box]
+elseif [label="x < 0",shape=diamond]
+s2 [label="cout << \"negativo\";",shape=box]
+else [label="else",shape=diamond]
+s3 [label="cout << \"nulo\";",shape=box]
+End [shape=circle]
+
+Start -> if
+if -> s1 [label="Sí"]
+if -> elseif [label="No"]
+s1 -> End
+elseif -> s2 [label="Sí"]
+elseif -> else [label="No"]
+s2 -> End
+else -> s3 [label="Sí"]
+else -> End [label="No"]
+s3 -> End
+}
+   #+end_src
+
+   #+RESULTS:
+   [[file:05-06-sentencia-else-if-ej2b.png]]
+
+   Opción c:
+   #+begin_src dot :file ../../static/img/05-06-sentencia-else-if-ej2c.png
+digraph G {
+Start [shape=circle]
+if [label="x > 0",shape=diamond]
+s1 [label="cout << \"positivo\";",shape=box]
+elseif [label="x < 0",shape=diamond]
+s2 [label="cout << \"negativo\";",shape=box]
+s3 [label="cout << \"nulo\";",shape=box]
+End [shape=circle]
+
+Start -> if
+if -> s1 [label="Sí"]
+if -> elseif [label="No"]
+s1 -> elseif
+elseif -> s2 [label="Sí"]
+elseif -> s3 [label="No"]
+s2 -> s3
+s3 -> End
+}
+   #+end_src
+
+   #+RESULTS:
+   [[file:05-06-sentencia-else-if-ej2c.png]]
+
+2. Escribe el código correspondiente al siguiente diagrama de flujo:
+
+   #+begin_src dot :file ../../static/img/05-06-sentencia-else-if-ej2.png
+digraph G {
+Start [shape=circle]
+if [label="x > y",shape=diamond]
+s1 [label="cout << \"mayor: x\";",shape=box]
+elseif [label="x < y",shape=diamond]
+s2 [label="cout << \"mayor: y\";",shape=box]
+s3 [label="cout << \"iguales\";",shape=box]
+End [shape=circle]
+
+Start -> if
+if -> s1 [label="Sí"]
+if -> elseif [label="No"]
+s1 -> End
+elseif -> s2 [label="Sí"]
+elseif -> s3 [label="No"]
+s2 -> End
+s3 -> End
+}
+   #+end_src
+
+   #+RESULTS:
+   [[file:../../static/img/05-06-sentencia-else-if-ej2.png]]

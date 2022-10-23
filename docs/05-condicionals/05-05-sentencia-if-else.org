@@ -1,0 +1,148 @@
+#+title: 05 05 Sentencia If Else
+
+** Sentencia ~if/else~
+
+Sentencia que comprueba si se cumple una condición. Si se cumple, ejecuta un bloque de sentencias. Si no se cumple, ejecuta otro bloque de sentencias distinto.
+
+** Sintaxis
+
+#+begin_src C++
+if (condición)
+{
+    sentencias_si_se_cumple;
+}
+else
+{
+    sentencias_si_NO_se_cumple;
+}
+#+end_src
+
+** Ejemplo
+
+#+begin_src C++ :tangle code/if-ejemplo.cpp
+cout << "¿Cuál es su nota? ";
+int nota;
+cin >> nota;
+if (nota < 5)
+{
+    cout << "Supenso";
+}
+else
+{
+    cout << "Aprobado";
+}
+cout << "\n";
+#+end_src
+
+[[../../static/img/if-else-flowchart-example.png]]
+
+** Ejercicios
+
+1. Elige el diagrama de flujo correspondiente al siguiente código:
+   #+begin_src C++
+if (x > 0)
+{
+    cout << "positivo";
+}
+else
+{
+    cout << "menor o igual que cero";
+}
+   #+end_src
+
+   Opción a:
+
+   #+begin_src dot :file ../../static/img/05-05-sentencia-if-else-ej1a.png
+digraph G {
+Start [shape=circle]
+defx [label="int x {-2};", shape=box]
+if [label="x > 0",shape=diamond]
+coutpos [label="cout << \"positivo\";",shape=box]
+coutneg [label="cout << \"menor o igual que cero\";",shape=box]
+coutn [label="cout << \"\\n\"",shape=box]
+End [shape=circle]
+
+Start -> defx
+defx -> if
+if -> coutpos [label="Sí"]
+if -> coutneg [label="No"]
+coutpos -> coutn
+coutneg -> coutn
+coutn -> End
+}
+   #+end_src
+
+   #+RESULTS:
+   [[file:../../static/img/05-05-sentencia-if-else-ej1a.png]]
+
+   Opción b:
+
+   #+begin_src dot :file ../../static/img/05-05-sentencia-if-else-ej1b.png
+digraph G {
+Start [shape=circle]
+defx [label="int x {-2};", shape=box]
+if [label="x > 0",shape=diamond]
+coutpos [label="cout << \"positivo\";",shape=box]
+coutneg [label="cout << \"menor o igual que cero\";",shape=box]
+coutn [label="cout << \"\\n\"",shape=box]
+End [shape=circle]
+
+Start -> defx
+defx -> if
+if -> coutpos [label="Sí"]
+if -> coutneg [label="No"]
+coutpos -> coutn
+coutneg -> End
+coutn -> End
+}
+   #+end_src
+
+   #+RESULTS:
+   [[file:../../static/img/05-05-sentencia-if-else-ej1b.png]]
+
+   Opción c:
+
+   #+begin_src dot :file ../../static/img/05-05-sentencia-if-else-ej1c.png
+digraph G {
+Start [shape=circle]
+defx [label="int x {-2};", shape=box]
+if [label="x > 0",shape=diamond]
+coutpos [label="cout << \"positivo\";",shape=box]
+coutneg [label="cout << \"menor o igual que cero\";",shape=box]
+coutn [label="cout << \"\\n\"",shape=box]
+End [shape=circle]
+
+Start -> defx
+defx -> if
+if -> coutpos [label="Sí"]
+coutpos -> coutneg [label="No"]
+coutneg -> coutn
+coutn -> End
+}
+   #+end_src
+
+   #+RESULTS:
+   [[file:../../static/img/05-05-sentencia-if-else-ej1c.png]]
+
+2. Escribe el código correspondiente al siguiente diagrama de flujo:
+
+   #+begin_src dot :file ../../static/img/05-05-sentencia-if-else-ej2.png
+digraph G {
+Start [shape=circle]
+prep [label="int dividendo;\nint divisor;\ncin >> dividendo;\ncin >> divisor;",shape=box]
+if [label="divisor == 0"]
+div0 [label="cout << \"No se puede dividir por 0\";", shape=box]
+res [label="cout << dividendo/divisor;", shape=box]
+End [shape=circle]
+
+Start -> prep
+prep -> if
+if -> div0 [label="Sí"]
+if -> res [label="No"]
+div0 -> End
+res -> End
+}
+   #+end_src
+
+   #+RESULTS:
+   [[file:../../static/img/05-05-sentencia-if-else-ej2.png]]

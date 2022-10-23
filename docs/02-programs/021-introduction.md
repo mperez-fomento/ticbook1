@@ -104,7 +104,7 @@ int main()
     printf("Hello!");
 }
 ```
-
+    
 Aunque la segunda versión es todavía difícil de entender, lo que está claro es la primera es mucho más complicada. Al menos, se ve que hay palabras escritas en inglés.
 
 ## Compilar

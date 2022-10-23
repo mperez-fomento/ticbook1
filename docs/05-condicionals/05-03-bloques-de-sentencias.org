@@ -1,0 +1,68 @@
+#+title: 05 03 Bloques de Sentencias
+
+** Bloque de sentencias
+
+Secuencia de sentencias escritas entre llaves:
+
+#+begin_src C++
+{
+    cout << "Primera sentencia\n";
+    int segunda {2};
+    cout << "Sentencia " << segunda + 1 + "\n";
+}
+#+end_src
+
+** El bloque ~main~
+
+Hay un bloque principal, que es el que encabezamos con la línea:
+
+#+begin_src C++
+int main()
+#+end_src
+
+** Indentación
+
+Dentro de un bloque, las sentencias se escriben /indentadas/ (con un margen izquierdo mayor), de modo que la estructura de bloques se vea más clara.
+
+** Bloques anidados
+
+Un bloque puede contener otros bloques. Por ejemplo:
+
+#+begin_src C++
+{
+    cout << "Este es el primer bloque\n";
+    {
+        cout << "Este bloque está dentro del primero\n";
+    }
+    cout << "Otra vez en el primer bloque\n";
+    {
+        cout << "Bloque dentro del primero\n";
+        {
+            cout << "Este es el bloque más \"profundo\"\n";
+        }
+    }
+}
+#+end_src
+
+** Ejercicio
+
+Arregla la indentación del código siguiente:
+
+#+begin_src C++
+int x {1};
+{
+    int y {2};
+    int z {2};
+    {
+        int a {3};
+    }
+    {
+        int b {3};
+        {
+            int c {4}
+        }
+        int c {3};
+    }
+    int d {2}
+}
+#+end_src

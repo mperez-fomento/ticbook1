@@ -1,0 +1,165 @@
+#+title: 05 04 Sentencia ~if~
+
+** Sentencia ~if~
+
+Sentencia que comprueba si se cumple una condición. Si se cumple, ejecuta un bloque de sentencias. Si no, no lo ejecuta.
+
+** Sintaxis
+
+#+begin_src C++
+if (condición)
+{
+    sentencia1;
+    sentencia2;
+    ...
+}
+#+end_src
+
+** Ejemplo
+
+#+BEGIN_SRC C++ :tangle code/sentencia-if.cpp
+#include "ticlib.h"
+
+using namespace std;
+
+int main()
+{
+    int edad {0};
+    cout << "Escriba su edad: ";
+    cin >> edad;
+    if (edad < 0)
+    {
+        cout << "La edad no puede ser negativa";
+    }
+    cout << "\n";
+}
+#+END_SRC
+
+[[../../static/img/if-flowchart-example.png]]
+
+
+** Ejercicios
+
+1. Dibuja el diagrama de flujo correspondiente al código siguiente:
+   #+begin_src C++
+if (x > 0)
+{
+    cout << "positivo\n";
+}
+if (x < 0)
+{
+    cout << "negativo";
+}
+if (x == 0)
+{
+    cout << "nulo";
+}
+   #+end_src
+
+    Opción a:
+    #+begin_src dot :file ../../static/img/05-04-sentencia-if-ej1a.png
+    digraph G {
+    Start [shape=circle]
+    A [label="x > 0",shape=diamond]
+    B [label="cout << \"positivo\";", shape=box]
+    C [label="x < 0",shape=diamond]
+    D [label="cout << \"negativo\";", shape=box]
+    E [label="x == 0", shape=diamond]
+    F [label="cout << \"nulo\";", shape=box]
+    End [shape=circle]
+
+    Start -> A
+    A -> B [label="Sí"]
+    A -> C [label="No"]
+    C -> D [label="Sí"]
+    C -> E [label="No"]
+    E -> F [label="Sí"]
+    B -> End
+    D -> End
+    F -> End
+    E -> End [label="No"]
+    }
+    #+end_src
+
+    #+RESULTS:
+    [[file:../../static/img/05-04-sentencia-if-ej1a.png]]
+
+        Opción b:
+    #+begin_src dot :file ../../static/img/05-04-sentencia-if-ej1b.png
+    digraph G {
+    Start [shape=circle]
+    A [label="x > 0",shape=diamond]
+    B [label="cout << \"positivo\";", shape=box]
+    C [label="x < 0",shape=diamond]
+    D [label="cout << \"negativo\";", shape=box]
+    E [label="x == 0", shape=diamond]
+    F [label="cout << \"nulo\";", shape=box]
+    End [shape=circle]
+
+    Start -> A
+    A -> B [label="Sí"]
+    A -> C [label="No"]
+    C -> D [label="Sí"]
+    C -> E [label="No"]
+    E -> F [label="Sí"]
+    B -> C
+    D -> E
+    F -> End
+    E -> End [label="No"]
+    }
+    #+end_src
+
+    #+RESULTS:
+    [[file:../../static/img/05-04-sentencia-if-ej1b.png]]
+
+    Opción c:
+    #+begin_src dot :file ../../static/img/05-04-sentencia-if-ej1c.png
+    digraph G {
+    Start [shape=circle]
+    A [label="x > 0",shape=diamond]
+    B [label="cout << \"positivo\";", shape=box]
+    C [label="x < 0",shape=diamond]
+    D [label="cout << \"negativo\";", shape=box]
+    E [label="x == 0", shape=diamond]
+    F [label="cout << \"nulo\";", shape=box]
+    End [shape=circle]
+
+    Start -> A
+    A -> B [label="Sí"]
+    A -> End [label="No"]
+    C -> D [label="Sí"]
+    C -> End [label="No"]
+    E -> F [label="Sí"]
+    B -> C
+    D -> E
+    F -> End
+    E -> End [label="No"]
+    }
+    #+end_src
+
+    #+RESULTS:
+    [[file:../../static/img/05-04-sentencia-if-ej1c.png]]
+
+
+2. Escribe el código correspondiente al siguiente diagrama de flujo:
+
+   #+begin_src dot :file ../../static/img/05-04-sentencia-if-ej2.png
+digraph G {
+Start [shape=circle]
+s1 [label="int x {0};\ncin >> x;", shape=box]
+if1 [label="x % 2 == 0", shape=diamond]
+s2 [label="cout << \"PAR\";", shape=box]
+s3 [label="cout << \"\\n\";", shape=box]
+End [shape=circle]
+
+Start -> s1
+s1 -> if1
+if1 -> s2 [label="Sí"]
+if1 -> s3 [label="No"]
+s2 -> s3
+s3 -> End
+}
+   #+end_src
+
+   #+RESULTS:
+   [[file:../../static/img/05-04-sentencia-if-ej2.png]]

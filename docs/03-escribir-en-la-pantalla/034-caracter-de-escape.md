@@ -1,0 +1,117 @@
+# Cómo escribir `\` en la consola
+
+Hemos visto que la secuencia `\n` representa un salto de línea. Entonces, si quiero escribir esa secuencia en la consola, ¿cómo podemos hacerlo? Porque el ordenador la interpretará como un salto de línea, y no la escribirá.
+
+Escribe, compila y ejecuta el siguiente programa, y observa el resultado en la consola:
+
+```C++
+#include "ticlib.h"
+
+using namespace std;
+
+int main()
+{
+    cout << "Quiero escribir una barra y una n, así: \n. Pero lo que veo es un salto de línea.\n";
+}
+```
+
+En realidad, el problema ocurre incluso sin la `n`:
+
+Escribe, compila y ejecuta el siguiente programa, y observa el resultado:
+
+```C++
+#include "ticlib.h"
+
+using namespace std;
+
+int main()
+{
+    cout << "Quiero escribir una barra, así: \. Pero no aparece en la consola.\n";
+}
+```
+
+El carácter `\` es un carácter especial, llamado **carácter de escape**: se usa para representar caracteres especiales al anteponerlo a ciertos caracteres. Ya hemos visto un caso (el salto de línea), pero hay más, como veremos enseguida. Las secuencias de caracteres que empiezan con el carácter de escape, con un significado asignado, se llaman **secuencias de escape**.
+
+Entonces, ¿cómo podemos escribir la barra invertida, `\`, en la consola? Pues, utilizando una secuencia de escape: `\\`.
+
+Escribe, compila y ejecuta el siguiente programa, y observa el resultado:
+
+```C++
+#include "ticlib.h"
+
+using namespace std;
+
+int main()
+{
+    cout << "Una barra invertida: \\";
+    cout << '\n';
+    cout << "Dos barras invertidas: \\\\";
+    cout << '\n';
+}
+```
+
+
+# Secuencias de escape
+
+| secuencia | significado              |
+|--------- |------------------------ |
+| \n        | Salto de línea           |
+| \t        | Tabulador                |
+| \b        | Borrar carácter anterior |
+| \\\\      | Barra invertida          |
+| \\&ldquo; | Comillas dobles          |
+| \\&rsquo; | Comillas simples         |
+
+Hay otras, que no estudiaremos.
+
+Escribe, compila y ejecuta el siguiente programa, y observa el resultado:
+
+```C++
+#include "ticlib.h"
+
+using namespace std;
+
+int main()
+{
+    // El tabulador es un espacio horizontal
+    cout << "1\t2\t3\n";
+    cout << "4\t5\t6\n";
+    cout << "7\t8\t9\n";
+    cout << "10\t11\t12\n";
+}
+```
+
+
+# Cómo escribir comillas en la consola
+
+Para escribir las comillas tenemos el mismo problema que para escribir la barra invertida: las comillas tienen un significado especial para el compilador (delimitan los datos de tipo textual), por lo que el compilador no puede distinguir si unas comillas están indicando el final de un texto o son parte del texto.
+
+Escribe y compila el siguiente programa, y observa los errores del compilador:
+
+```C++
+#include "ticlib.h"
+
+using namespace std;
+
+int main()
+{
+    // Queremos escribir "programa" entre comillas, pero...
+    cout << "Este "programa" no es correcto\n";
+}
+```
+
+La solución es, de nuevo, una secuencia de escape: `\"`.
+
+Escribe y compila el siguiente programa, y observa los errores del compilador:
+
+```C++
+#include "ticlib.h"
+
+using namespace std;
+
+int main()
+{
+    // Ahora sí:
+    cout << "Este \"programa\" sí es correcto\n";
+}
+```

@@ -1,0 +1,41 @@
+#+title: 031 Estructura de un programa
+
+* Estructura básica de un programa
+
+Observa el siguiente programa:
+
+#+begin_src C++
+#include "ticlib.h"
+
+using namespace std;
+
+int main()
+{
+    cout << "Hello, world!\n";
+}
+#+end_src
+
+Copia el programa, y, usando la consola, compílalo y ejecútalo. ¿Qué hace el ordenador cuando ejecuta el programa? Lo que hace es escribir el texto /Hello, world!/ en la consola en la que hemos ejecutado el programa.
+
+Veamos para qué sirve cada línea.
+
+~#include "ticlib.h"~
+
+Busca el archivo ~ticlib.h~ y copia su contenido en este lugar, antes de compilar. Las línea que comienzan con ~#~ son /directivas del compilador/: es decir, son órdenes para que el compilador realice algunos cambios en el código fuente antes de compilarlo. El archivo ~ticlib.h~ es una /librería/: porciones de programa escritas por algún programador para que otros programadores puedan usarlas en sus programas.
+
+~using namespace std;~
+
+Le dice al compilador que algunas palabras que usaremos hay que completarlas añadiendo ~std::~ delante de ellas. Es el caso, por ejemplo, de ~cout~, que debería ser ~std::cout~, pero el compilador se encargará de añadir esas letras por nosotros.
+
+~int main()~
+
+Aquí comienza realmente el programa. Todo lo que viene a continuación, encerrado entre llaves, son las órdenes (/sentencias/) que forman el programa. Es decir, esto marca el comienzo del programa realmente dicho. Más adelante entenderemos mejor porqué se marca así el comienzo del programa, y comprenderemos por qué se usan las palabras ~int~ y ~main~, y el significado de los paréntesis.
+
+~cout << "Hello, world!\n";~
+
+Esta es la única orden que este programa da al ordenador.
+
+La orden le dice que escriba en la pantalla, y, en concreto, en la consola, el texto que está entre comillas. La palabra ~cout~ representa a la consola. El símbolo ~<<~ expresa que lo que hay a la derecha (un texto) hay que enviarlo a lo que hay a la izquierda (~cout~, es decir, la consola).
+
+Como ves, para una sola sentencia ha sido necesario escribir bastantes cosas.
+

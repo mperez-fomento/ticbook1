@@ -1,0 +1,36 @@
+# Flujo de ejecución
+
+El **flujo de ejecución** es el orden en que se ejecutan las sentencias de un programa.
+
+
+# Punto de entrada
+
+Todo programa debe tener un **punto de entrada**, que es la primera sentencia que se ejecutará. En C++ el punto de entrada es la primera sentencia de la función `main`.
+
+
+# Punto de salida
+
+El flujo puede terminar de alguna de las siguientes formas:
+
+-   Al terminar de ejecutar la última sentencia de la función `main`.
+-   Al producirse algún error durante la ejecución, que impida al programa seguir ejecutándose. Este tipo de errores se llaman *excepciones*.
+-   Al ejecutarse una sentencia `return` en la función `main`.
+
+
+# Tipos de flujo
+
+Hay tres tipos de flujo:
+
+-   **Secuencial**: las sentencias se ejecutan en el orden en que están escritas.
+-   **Condicional** o **alternativo**: cierto grupo de sentencias se ejecutan o no según se cumpla o no cierta condición. ![img](.guides/img/alternative-flow-chart.png)
+-   **Cíclico** (bucles): cierto grupo de sentencias se ejecuta repetidamente mientras se cumpla cierta condición. ![img](.guides/img/loop-flow-chart.png)
+
+
+# Sentencias de control de flujo
+
+**Sentencias de control de flujo** son las que permiten introducir un flujo alternativo o cíclico.
+
+Las sentencias de control de flujo que estudiaremos son:
+
+-   flujo alternativo: `if`;
+-   flujo cíclico: `while` y `for`.

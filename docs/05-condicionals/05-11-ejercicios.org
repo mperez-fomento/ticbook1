@@ -1,0 +1,155 @@
+#+title: 05 11 Ejercicios
+
+1. Usando la consola (o /terminal/), Busca el archivo de mayor tamaño que hay dentro de la carpeta ~ejercicio1~ o cualquiera de sus subcarpetas, y cámbiale el nombre a ~biggest~.
+2. Dentro de la carpeta ~ejercicio2~ hay un archivo fuente C++. Compila dicho archivo de modo que el archivo ejecutable se llame ~ej2~. Usa la consola.
+3. Escribe un programa (~ejercicio3.cpp~) que escriba lo siguiente en la consola, utilizando una única sentencia:
+   #+begin_src bash
+Este es el "carácter de escape": \
+Y '\n' significa: "nueva línea".
+   #+end_src
+4. Corrige los errores de este programa (~ejercicio4.cpp~):
+   #+begin_src C++ :tangle code/ejercicio4.cpp
+int main()
+{
+    cout << "Área de un tríangulo.\n"
+    cout << "Escriba la base y la altura, en ese orden, separadas por un espacio o en dos líneas: ";
+    cin >> base;
+    double altura;
+    cin << altura;
+    cout << "El área del triángulo es: " base * altura / 2 "\n";
+}
+   #+end_src
+5. Corrige los errores de este programa (~ejercicio5.cpp~):
+   #+begin_src C++ :tangle code/ejercicio5.cpp
+#include "ticlib.h"
+
+using namespace std;
+
+int main()
+{
+    cout << "Valor absoluto\n"
+    cout << "--------------\n"
+    cout << "Escriba un número (con o sin decimales): "
+    double num {0.0};
+    cin << num;
+    int valor_absoluto {num};
+    if (valor_absoluto < 0.0)
+    {
+        valor_absoluto = -valor_absoluto;
+    }
+    cout << "El valor absoluto de " << num << " es " << valor_absoluto << "\n";
+}
+   #+end_src
+6. El siguiente programa (~ejercicio6.cpp~) se compila correctamente, pero el resultado que da no es siempre correcto. El programa debería leer tres números distintos de la consola, y los escribe en orden, de mayor a menor. Modifica el programa de modo que la respuesta dada por el programa sea siempre correcta.
+   #+begin_src C++ :tangle code/ejercicio6.cpp
+#include "ticlib.h"
+
+using namespace std;
+
+int main()
+{
+    cout << "Escriba tres números enteros distintos (separados por un espacio, o en dos líneas): ";
+    int num1;
+    int num2;
+    int num3;
+    cin >> num1 >> num2 >> num3;
+    if (num1 = num2 || num1 = num3 || num2 = num3)
+    {
+        cout << "Los números deben ser todos distintos\n";
+    }
+    else if (num1 > num2 && num1 > num3)
+    {
+        cout << "En orden: " << num1 << " ";
+        if (num2 > num3)
+        {
+            cout << num2 << " " << num3 << "\n":
+        }
+        else
+        {
+            cout << num3 << " " << num2 << "\n";
+        }
+    }
+    else if (num2 > num1 && num1 > num3)
+    {
+        cout << num2 << " " << num1 << " " << num3 << "\n";
+    }
+    else if (num2 > num3 && num3 > num1)
+    {
+        cout << num2 << " " << num3 << " " << num1 << "\n";
+    }
+    else if (num2 > num1)
+    {
+        cout << num3 << " " << num2 << " " << num1 << "\n";
+    }
+    else
+    {
+        cout << num3 << " " << num1 << " " << num2 << "\n";
+    }
+}
+   #+end_src
+7. Escribe un programa (~ejercicio7.cpp~) para calcular el área de un círculo cuyo radio será dado por el usuario. Usa ~M_PI~ para obtener el valor del número $\pi$.
+
+   El esquema del programa sería el siguiente:
+   - Escribe en la consola un mensaje para que el usuario sepa qué tiene que escribir (el radio).
+   - Crea una variable del tipo adecuado, para guardar en ella el número que el usuario escriba.
+   - Guarda en la variable lo que el usuario escriba en la consola (~cin >> ...~).
+   - Escribe en la consola un mensaje para que el usuario sepa qué resultado está recibiendo, y, a continuación, escribe la expresión matemática para calcular el área del círculo.
+
+   Recuerda que el número $\pi$ está guardado en una /variable/ llamada ~M_PI~ (dicha /variable/ está definida en la librería que incluyes siempre al principio, ~ticlib.h~).
+8. Escribe un programa (~ejercicio8.cpp~) para calcular la hipotenusa de un triángulo rectángulo cuyos catetos serán dados por el usuario. Recuerda que para obtener la raíz cuadrada de ~x~ usamos la expresión ~sqrt(x)~. El esquema es similar al del ejercicio anterior.
+9. Escribe un programa (~ejercicio9.cpp~) que nos diga si un número escrito por el usuario es par o impar. Para comprobar si el número es par, la condición es ~x % 2 == 0~ (el resto de la división de un número par entre 2 es 0). Si no es par, es impar.
+
+   En este caso, sigue un esquema parecido al de los programas anteriores, pero ten en cuenta que, al final, necesitarás una sentencia ~if~ para elegir qué repuesta escribes en la consola (~par~ o ~impar~).
+10. En el tema anterior escribiste un programa para calcular las soluciones de una ecuación de segundo grado. Mejora dicho programa escribiendo otro (~ejercicio10.cpp~) que compruebe primero si el polinomio tiene dos, una o ninguna raíz, y conteste apropiadamente en cada caso.
+
+    Si el polinomio no tiene raíces, debe dar como respuesta: ~No tiene raíces~.
+
+    Si el polinomio tiene una sola raíz (una raíz doble), debe dar como respuesta un único número.
+
+    Si el polinomio tiene dos raíces, dará la misma respuesta que el programa del ejercicio anterior.
+
+    Para comprobar si un polinomio tiene una, dos o ninguna raíces, tienes que comprobar si $b^{2}-4ac$ (el discriminante) es igual, mayor o menor que cero, respectivmente.
+11. Escribe un programa (~ejercicio11.cpp~) que nos diga si un carácter introducido por el usuario es una letra mayúscula, una letra minúscula o si no es una letra.
+
+    Si el carácter escrito por el usuario es una letra minúscula, el programa escribirá en la consola: ~Has escrito una letra minúscula~.
+
+    Si el carácter escrito por el usuario es una letra mayúscula, el programa escribirá en la consola: ~Has escrito una letra mayúscula~.
+
+    Si el carácter escrito por el usuario no es una letra, el programa escribirá en la consola: ~No has escrito una letra~.
+
+    Ten en cuenta que es posible comparar caracteres con ~>~ y ~<~ porque los caracteres se convierten en números usando la tabla de códigos ASCII. Como en dicha tabla, las letras están ordenadas alfabéticamente, podemos usar ~>~ y ~<~ para compara letras alfabéticamente. Eso sí, podemos comparar minúsculas con minúsculas, y mayúsculas con mayúsculas, pero no mezclarlas. Por ejemplo, si ~char letra {'b'}~, entonces es cierto que ~letra < 'c'~, porque el código ASCII de ~'b'~ es 98, mientras que el de ~'c'~ es 99. Sin embargo, ~letra > 'C'~, porque el código ASCII de ~'C'~ es 67.
+12. Escribe un programa (~ejercicio12.cpp~) que diga si un número menor que 100, introducido por el usuario, es primo o compuesto.
+
+    Para comprobar si un número es primo o compuesto, hay que dividirlo por los números primos. Como el número es menor que 100, basta con probar con 2, 3, 5 y 7: si no es divisible por ninguno de estos, pero sí por algún otro factor primo mayor, entonces el número tendría que ser mayor que 100, ya que el siguiente factor primo es 11, y $11 \cdot 11 = 121$.
+
+    Ten en cuenta que debes primero probar si el número es 2, 3, 5 o 7, ya que cada uno de ellos es divisible por sí mismo, pero eso no los convierte en compuestos.
+
+    Para probar si un número ~a~ es divisible entre otro número ~b~, usa la condición ~a % b == 0~ (recuerda que ~%~ significa el resto de la división, de modo que estamos comprobando si el resto de la división es igual a ~0~).
+
+    Si el usuario introduce un número mayor o igual que 100, el programa debe contestar ~El número introducido es demasiado grande: solo funciona con números menores que 100~.
+
+    Si el número introducido por el usuario es primo, el programa debe escribir en la consola: ~N es primo~, donde ~N~ es el número introducido por el usuario.
+
+    Si el número introducido por el usuario es compuesto, el programa debe escribir en la consola: ~N es compuesto~, donde ~N~ es el número introducido por el usuario.
+13. Escribe un programa (~ejercicio13.cpp~) para jugar a /piedra, papel o tijera/ (una sola vez: ya aprenderemos cómo programar repeticiones). El usuario debe elegir una de las tres opciones (por ejemplo, escribiendo ~1~, ~2~ o ~3~), y el programa elegirá su opción al azar.
+
+    El programa debe mostrar la opción escogida por el ordenador. Luego mostrará quién es el ganador con uno de los siguientes mensajes:
+
+    ~¡Has ganado!~ (si el usuario gana y el ordenador pierde)
+
+    ~¡Has perdido!~ (si el usuario pierde y el ordenador gana)
+
+    ~¡Empate!~ (si hay empate)
+
+    Para elegir una opción al azar, usa la expresión:
+
+    ~random_int(1, 3)~
+
+    El resultado es un número entero aleatorio entre 1 y 3 (puedes cambiar los límites, claro, pero aquí solo hay tres opciones).
+14. Escribe un programa (~ejercicio14.cpp~) para factorizar polinomios de segundo grado. El programa pedirá al usuario los coeficientes del polinomio (primero el de $x^{2}$, luego el de $x$, y al final el término independiente), y luego escribirá en la consola la factorización, ordenando los factores según las raíces, de menor a mayor.
+
+    Ten en cuenta que si un polinomio de segundo grado no tiene raíces, no se puede factorizar, por lo que el programa deberá escribir como respuesta el mismo polinomio. Por ejemplo, si el usuario introduce ~1 2 4~ (es decir, el polinomio es $x^{2}+2x+4$), el programa escribirá como respuesta: ~x^2 + 2x + 4~.
+
+    Los factores correspondientes a una raíz positiva se escribirán así: ~(x - r)~, siendo ~r~ la raíz. Por ejemplo, si el usuario introduce ~1 -5 6~ (polinomio: $x^{2}-5x+6$), el programa escribirá como respuesta: ~(x - 2)(x - 3)~.
+
+    Los factores correspondientes a una raíz negativa se escribirán así: ~(x + r)~, siendo ~r~ la raíz. Por ejemplo, si el usuario introduce ~1 -1 -6~ (polinomio: $x^{2}-x-6$), el programa escribirá como respuesta: ~(x + 2)(x - 3)~.

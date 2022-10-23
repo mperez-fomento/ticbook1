@@ -102,4 +102,47 @@ Además, cuando el compilador encuentra un error, sigue intentando compilar el r
     }
     ```
 9.  El siguiente programa contiene errores. Intenta compilarlo para ver los errores. Luego corrige los errores y vuelve a intentar compilarlo, hasta que la compilación se realice sin errores. Finalmente, ejecuta el programa para ver el resultado.
+    
+    ```c++
+    #include <iostream>
+    
+    using namespace std;
+    
+    int main()
+    {
+        cout << "Hello, world!\n;
+    }
+    ```
 10. El siguiente programa contiene errores. Intenta compilarlo para ver los errores. Luego corrige los errores y vuelve a intentar compilarlo, hasta que la compilación se realice sin errores. Finalmente, ejecuta el programa para ver el resultado.
+    
+    ```c++
+    using namespace std;
+    
+    int main()
+    {
+        cout << "Hello, world!\n";
+    }
+    ```
+11. El siguiente programa contiene errores. Intenta compilarlo para ver los errores. Luego corrige los errores y vuelve a intentar compilarlo, hasta que la compilación se realice sin errores. Finalmente, ejecuta el programa para ver el resultado.
+    
+    ```c++
+    #include <iostream>
+    
+    int main()
+    {
+        cout << "Hello, world!\n";
+    }
+    ```
+12. El siguiente programa contiene errores. Intenta compilarlo para ver los errores. Luego corrige los errores y vuelve a intentar compilarlo, hasta que la compilación se realice sin errores. Finalmente, ejecuta el programa para ver el resultado.
+    
+    ```c++
+    #include <iostream>
+    
+    using namespace std;
+    
+    int main()
+    {
+        cout << "Hello, world!\n";
+    }
+    ```
+13. 

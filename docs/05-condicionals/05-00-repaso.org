@@ -1,0 +1,14 @@
+#+title: 05 00 Repaso
+
+Contesta a las preguntas siguientes:
+
+- Comando de la consola para cambiar la carpeta de trabajo:
+- Comando de la consola eliminar una carpeta:
+- Parámetro del comando ~ls~ para mostrar los tamaños de los archivos en kilobytes, megabytes, etc.:
+- Un archivo que contiene un programa escrito en C++ se llama:
+- Un archivo que contiene un programa compilado en código máquina se llama:
+- Para escribir ~"algo"~ en la consola, usamos la sentencia:
+- Para guardar en la variable ~algo~ lo que el usuario escriba en la consola, usamos la sentencia:
+- La sentencia ~x = 5;~ es una sentencia de tipo:
+- El literal ~"a"~ es de tipo:
+- La sentencia ~x++;~ es una sentencia de tipo:
